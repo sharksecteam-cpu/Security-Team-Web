@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIRHUNT – Compra</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        line-height: 1.5;
+    }
+    .logo {
+        width: 80%;
+        max-width: 400px;
+        margin-top: 40px;
+        animation: fadeIn 1s ease-in-out;
+    }
+    .content {
+        max-width: 800px;
+        padding: 20px;
+        animation: fadeInUp 1s ease-in-out;
+    }
+    h1, h2 {
+        color: #00ffea;
+    }
+    .buy-button {
+        background: linear-gradient(45deg, #00c853, #b2ff59);
+        color: #000;
+        border: none;
+        padding: 18px 36px;
+        font-size: 24px;
+        font-weight: bold;
+        border-radius: 15px;
+        margin: 30px 0;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+        box-shadow: 0 0 10px #00c853;
+    }
+    .buy-button:hover {
+        transform: scale(1.08);
+        filter: brightness(1.2);
+        box-shadow: 0 0 25px #00ffea;
+    }
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+    @keyframes fadeInUp {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+    .price {
+        font-size: 22px;
+        margin-top: 10px;
+        color: #ffea00;
+    }
+    .disclaimer {
+        font-size: 12px;
+        color: #888;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+    ul {
+        text-align: left;
+        margin: 15px 0;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+<script>
+function sendEmail() {
+    const userLang = navigator.language || navigator.userLanguage;
+    let email = "sharksecteam@gmail.com";
+    let subject = encodeURIComponent("🦈 AIRHUNT Purchase");
+    let body;
+
+    if(userLang.startsWith("pt")) {
+        body = encodeURIComponent("Eu desejo comprar o AIRHUNT!\n\n" +
+            "Recursos:\n" +
+            "- Multi-Brand TV Support: Roku, LG WebOS, Samsung Tizen, Android TV, Generic DLNA\n" +
+            "- Network Discovery: SSDP, Port scanning\n" +
+            "- Multi Device Control, YouTube Launch, Batch commands\n" +
+            "- Camera Hunter (Experimental)\n" +
+            "\nValor: R$25");
+    } else {
+        body = encodeURIComponent("I want to buy AIRHUNT!\n\n" +
+            "Features:\n" +
+            "- Multi-Brand TV Support: Roku, LG WebOS, Samsung Tizen, Android TV, Generic DLNA\n" +
+            "- Network Discovery: SSDP, Port scanning\n" +
+            "- Multi Device Control, YouTube Launch, Batch commands\n" +
+            "- Camera Hunter (Experimental)\n" +
+            "\nPrice: $25");
+    }
+
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+}
+</script>
+</head>
+<body>
+
+<img src="https://i.ibb.co/4ycN6v9/logo.png" alt="AIRHUNT Logo" class="logo">
+
+<div class="content">
+    <h1>AIRHUNT – Universal Smart TV Network Controller</h1>
+    <p>
+        AIRHUNT é uma ferramenta Python 3 para descobrir e controlar Smart TVs na rede local usando protocolos nativos.<br>
+        Suporta múltiplas marcas, controle em lote, YouTube, mensagens na tela e descoberta experimental de câmeras.<br>
+        <strong>Construído para usuários avançados e ambientes de rede.</strong>
+    </p>
+
+    <h2>Marcas e Protocolos Suportados</h2>
+    <ul>
+        <li>Roku (ECP protocol)</li>
+        <li>LG WebOS (WebSocket API)</li>
+        <li>Samsung Tizen (Remote Control API)</li>
+        <li>Android TV (ADB)</li>
+        <li>Generic DLNA</li>
+    </ul>
+
+    <h2>Recursos e Eficiência</h2>
+    <ul>
+        <li>Descoberta de dispositivos na rede local</li>
+        <li>Controle de múltiplas TVs simultaneamente</li>
+        <li>Lançamento de YouTube e envio de mensagens na tela</li>
+        <li>Execução de comandos em lote</li>
+        <li>Chaos Mode: comandos aleatórios contínuos</li>
+        <li>Camera Hunter (experimental, apenas redes autorizadas)</li>
+    </ul>
+
+    <div class="price">
+        R$25 (BR) | $25 (INT)
+    </div>
+
+    <a class="buy-button" onclick="sendEmail()">🛒 Comprar Agora</a>
+
+    <div class="disclaimer">
+        ⚠ Não nos responsabilizamos pelo uso indevido da ferramenta. Utilize apenas em redes que você possui ou tem autorização para testar.
+    </div>
+</div>
+
+</body>
+</html>
